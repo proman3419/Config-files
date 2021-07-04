@@ -1,0 +1,14 @@
+{
+    "shell_cmd": "xfce4-terminal -T \"Output - ${file_name}\" -e 'bash -c \"cat ~/Documents/configs/sublime_text/runtime_files/input | python3 $file | tee ~/Documents/configs/sublime_text/runtime_files/output; cp ${file} ~/Documents/configs/sublime_text/runtime_files/source; exec bash\"'",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+    "quiet": true,
+    "env": {"PYTHONIOENCODING": "utf-8"},
+
+    "variants": [
+        {
+            "name": "Runtime",
+            "shell_cmd": "xfce4-terminal -T \"Output - ${file_name}\" -e 'bash -c \"cat ~/Documents/configs/sublime_text/runtime_files/input | python3 -m cProfile $file | tee ~/Documents/configs/sublime_text/runtime_files/output; cp ${file} ~/Documents/configs/sublime_text/runtime_files/source; exec bash\"'",
+        },
+    ]
+}

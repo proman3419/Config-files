@@ -1,0 +1,14 @@
+{
+    "shell_cmd": "gnome-terminal -e 'bash -c \"cat ~/.sublime_text/input | python3 $file | tee ~/.sublime_text/output; cp ${file} ~/.sublime_text/source; exec bash\"'",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+    "quiet": true,
+    "env": {"PYTHONIOENCODING": "utf-8"},
+
+    "variants": [
+        {
+            "name": "Runtime",
+            "shell_cmd": "gnome-terminal -e 'bash -c \"cat ~/.sublime_text/input | python3 -m cProfile $file | tee ~/.sublime_text/output; cp ${file} ~/.sublime_text/source; exec bash\"'",
+        },
+    ]
+}

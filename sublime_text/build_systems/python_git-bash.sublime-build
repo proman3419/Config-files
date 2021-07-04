@@ -1,0 +1,14 @@
+{
+    "cmd": ["C:/Program Files/Git/git-bash.exe", "-c", "cat ~/.sublime_text/input | python.exe '$file' | tee ~/.sublime_text/output; cp '$file' ~/.sublime_text/source; echo '\n>>> Finished, press ENTER to continue'; read"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+    "quiet": true,
+    "env": {"PYTHONIOENCODING": "utf-8"},
+
+    "variants": [
+        {
+            "name": "Runtime",
+            "cmd": ["C:/Program Files/Git/git-bash.exe", "-c", "cat ~/.sublime_text/input | python.exe -m cProfile '$file' | tee ~/.sublime_text/output; cp '$file' ~/.sublime_text/source; echo '>>> Finished, press ENTER to continue'; read"]
+        },
+    ]
+}
