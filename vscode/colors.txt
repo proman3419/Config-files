@@ -1,0 +1,5 @@
+[DARK]
+theme: Tomorrow Night - Space Gray / alpenglow-monokai / Dark+
+
+[LIGHT]
+theme: Atom One Light Theme

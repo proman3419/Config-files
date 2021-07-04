@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Atom One Light",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 16,
+    "python.terminal.executeInFileDir": true,
+
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[css]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    }
+}

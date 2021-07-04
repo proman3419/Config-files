@@ -1,0 +1,19 @@
+Background:
+#2e2e2e
+Text: 
+#d6d6d6
+Link: 
+#67b9f1
+Visited link: 
+#ac71f0
+Heading color: 
+#d3d3d3
+Input borders: 
+#d3d3d3
+Input hints: 
+#777777
+Dialog: 
+#242424
+
+Whitelist:
+github.com, discordapp.com, reddit.com, wykop.pl, twitch.tv, chess.com, hackerrank.com, mp3juices.cc, lichess.org, jakdojade.pl, portal.librus.pl, synergia.librus.pl, niebezpiecznik.pl, gather.soldat2d.com, stats.jrgp.us, soldatladder.net, jbzd.com.pl, cda.pl, chat.itersive.com, trello.com

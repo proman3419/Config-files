@@ -1,0 +1,14 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "description": "Removes the download bar at the bottom of Chrome windows (does nothing else).",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsYweqm2EA3TgItwj35eu2p5Je4FM3L8wSkp1gKr9yTALII+rD3JEkhH79HqTzItTmtnv4hfi+II5nFlQiL3/GmqY1c/sXzzO1hlLH4r3PmdZLxx/+TNJcQS28gMuor2cf584VfqvGwBONvPIlMeutNECxrlN74EGc4h128zRKoPzxSyeQ7zycasnI2Ia5Q+MJlKUfb4xfHkqaom3WGn+L7xycKj0Zw6HzCyMGss3bODgs3IgLpLx2HBBAcnewvgWpHJFssA/2GPy0DHa/K9zG79uQ7K9rx0tyjp+REqs8fJT9JGsCjEgCiHyXTVcdmp+MJJyrxvHZAey12Pz5GKtZQIDAQAB",
+   "manifest_version": 2,
+   "name": "Disable Download Bar",
+   "offline_enabled": true,
+   "permissions": [ "downloads", "downloads.shelf" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.5"
+}
