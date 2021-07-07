@@ -7,17 +7,15 @@ set-title() {
 
 # Copy templates
 ct() {
-    cp ${TEMPLATES_DIR}/c.c $1
-}
+    declare -A name_to_filename
 
-cpt() {
-    cp ${TEMPLATES_DIR}/cp.cpp $1
-}
+    # Add/remove if needed
+    name_to_filename["c"]="c.c"
+    name_to_filename["cppcp"]="cp.cpp"
+    name_to_filename["cpp"]="cpp.cpp"
+    name_to_filename["py"]="py.py"
 
-cppt() {
-    cp ${TEMPLATES_DIR}/cpp.cpp $1   
-}
+    extension="$(cut -d '.' -f2 <<< ${name_to_filename[$1]})"
 
-pt() {
-    cp ${TEMPLATES_DIR}/p.py $1
+    cp "${TEMPLATES_DIR}/${name_to_filename[$1]}" "${2}.${extension}"
 }

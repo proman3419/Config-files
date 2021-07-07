@@ -117,10 +117,14 @@ if [ -f ~/.bash_constants ]; then
 fi
 
 #-------------------------------------------------------------------------------
-# Constants
+# Paths
 #-------------------------------------------------------------------------------
 
-export TEMPLATES_DIR='/home/przemek/Documents/programing/templates'
+# Constant paths
+export TEMPLATES_DIR='/home/przemek/Documents/configs/templates'
+
+# Temporary paths
+export ASD_REPO_DIR='/home/przemek/Documents/agh/semestr_2/asd/asd_repo'
 
 
 #-------------------------------------------------------------
