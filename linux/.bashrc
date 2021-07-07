@@ -1,3 +1,7 @@
+#-------------------------------------------------------------------------------
+# Defaults
+#-------------------------------------------------------------------------------
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -112,20 +116,88 @@ if [ -f ~/.bash_constants ]; then
     . ~/.bash_constants
 fi
 
-# Alias definitions
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+#-------------------------------------------------------------------------------
+# Constants
+#-------------------------------------------------------------------------------
+
+export TEMPLATES_DIR='/home/przemek/Documents/programing/templates'
+
+
+#-------------------------------------------------------------
+# Colors
+#-------------------------------------------------------------
+
+# Color definitions (taken from Color Bash Prompt HowTo).
+# Some colors might look different of some terminals.
+# For example, I see 'Bold Red' as 'orange' on my screen,
+# hence the 'Green' 'BRed' 'Red' sequence I often use in my prompt.
+
+# Normal Colors
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+
+# Background
+On_Black='\e[40m'       # Black
+On_Red='\e[41m'         # Red
+On_Green='\e[42m'       # Green
+On_Yellow='\e[43m'      # Yellow
+On_Blue='\e[44m'        # Blue
+On_Purple='\e[45m'      # Purple
+On_Cyan='\e[46m'        # Cyan
+On_White='\e[47m'       # White
+
+NC="\e[m"               # Color Reset
+
+# Colors for PS1
+# It's required that colors have \[ in front and \] at the end.
+function CPS1() {
+    echo "\["$1"\]"
+}
+
+
+#-------------------------------------------------------------------------------
+# Additions
+#-------------------------------------------------------------------------------
+
+# Custom PS1
+PS1="$(CPS1 ${BYellow})(\t)$(CPS1 ${NC}) " # time
+PS1=${PS1}"$(CPS1 ${BGreen})\u@\h$(CPS1 ${NC})" # username@hostname
+PS1=${PS1}"$(CPS1 ${NC}):$(CPS1 ${NC})" # separator
+PS1=${PS1}"$(CPS1 ${BBlue})\w$(CPS1 ${NC})" # current working directory
+PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
+
+# Ignore duplicates in command history and increase
+# history size to 1000 lines
+export HISTCONTROL=ignoredups
+export HISTSIZE=1000
+
+
+#-------------------------------------------------------------------------------
+# Aliases and functions
+#-------------------------------------------------------------------------------
+
+# Aliases definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Function definitions
+# Functions definitions
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
-fi
-
-# Additions
-if [ -f ~/.bash_additions ]; then
-    . ~/.bash_additions
 fi
