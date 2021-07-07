@@ -26,4 +26,5 @@
 	"dark_theme": "Adaptive.sublime-theme",
 	"light_theme": "Default.sublime-theme",
 	"theme": "auto",
+	"remember_workspace": false
 }
