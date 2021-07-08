@@ -121,6 +121,7 @@ fi
 #-------------------------------------------------------------------------------
 
 # Constant paths
+export SCRIPTS_DIR='/home/przemek/Documents/configs/linux/scripts'
 export TEMPLATES_DIR='/home/przemek/Documents/configs/templates'
 
 # Temporary paths
@@ -176,6 +177,21 @@ function CPS1() {
 
 
 #-------------------------------------------------------------------------------
+# Aliases and functions
+#-------------------------------------------------------------------------------
+
+# Aliases definitions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Functions definitions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
+
+#-------------------------------------------------------------------------------
 # Additions
 #-------------------------------------------------------------------------------
 
@@ -191,17 +207,6 @@ PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
 
-
-#-------------------------------------------------------------------------------
-# Aliases and functions
-#-------------------------------------------------------------------------------
-
-# Aliases definitions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# Functions definitions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
+# Add scripts directory to PATH
+PATH="${SCRIPTS_DIR}:${PATH}"
+export PATH
