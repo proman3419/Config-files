@@ -116,17 +116,6 @@ if [ -f ~/.bash_constants ]; then
     . ~/.bash_constants
 fi
 
-#-------------------------------------------------------------------------------
-# Paths
-#-------------------------------------------------------------------------------
-
-# Constant paths
-export SCRIPTS_DIR='/home/przemek/Documents/configs/linux/scripts'
-export TEMPLATES_DIR='/home/przemek/Documents/configs/templates'
-
-# Temporary paths
-export ASD_REPO_DIR='/home/przemek/Documents/agh/semestr_2/asd/asd_repo'
-
 
 #-------------------------------------------------------------
 # Colors
@@ -206,7 +195,3 @@ PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
 # history size to 1000 lines
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
-
-# Add scripts directory to PATH
-PATH="${SCRIPTS_DIR}:${PATH}"
-export PATH

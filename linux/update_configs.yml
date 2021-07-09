@@ -11,3 +11,4 @@
         - { src: '.bash_aliases', dest: '~', mode: '0644'}
         - { src: '.bash_functions', dest: '~', mode: '0644'}
         - { src: '.bashrc', dest: '~', mode: '0644'}
+        - { src: '.profile', dest: '~', mode: '0644'}
