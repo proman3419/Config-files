@@ -1,0 +1,14 @@
+In order to run a script both the script and the directory(ies ?) above it require +x permission.
+
+.profile is read only for an interactive login shell.
+
+Linux reads from one of these files, checking in the following order:
+1. ~/.bash_profile
+2. ~/.bash_login
+3. ~/.profile
+
+/etc/environment contains environment variables for all users.
+
+Setting PATH in /etc/environment may not work because other scripts may overwrite it (that is the case for example on Debian).
+
+Environment variables for specific users should be located in their .bashrcs.
