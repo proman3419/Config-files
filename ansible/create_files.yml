@@ -1,0 +1,22 @@
+- name: "Create files"
+  hosts: localhost
+  connection: local 
+  tasks:
+    - name: Create directories
+      file:
+        path: "{{ item.path }}"
+        mode: "{{ item.mode }}"
+        state: directory
+      with_items:
+        - { path: '~/.runtime_files', mode: '0755' }
+
+    - name: Create files
+      file:
+        path: "{{ item.path }}"
+        mode: "{{ item.mode }}"
+        state: touch
+      with_items:
+        - { path: '~/.runtime_files/input', mode: '0744' }
+        - { path: '~/.runtime_files/output', mode: '0744' }
+        - { path: '~/.runtime_files/source', mode: '0744' }
+        - { path: '~/.runtime_files/compiled', mode: '0755' }

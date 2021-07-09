@@ -1,0 +1,14 @@
+- name: "Update configs"
+  hosts: localhost
+  connection: local 
+  tasks:
+    - name: Copy multiple files with different permissions
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+      with_items:
+        - { src: '../linux/.bash_aliases', dest: '~', mode: '0644' }
+        - { src: '../linux/.bash_functions', dest: '~', mode: '0644' }
+        - { src: '../linux/.bashrc', dest: '~', mode: '0644' }
+        - { src: '../linux/.profile', dest: '~', mode: '0644' }
