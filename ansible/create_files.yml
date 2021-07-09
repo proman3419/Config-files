@@ -7,16 +7,20 @@
         path: "{{ item.path }}"
         mode: "{{ item.mode }}"
         state: directory
+      become: "{{ item.become }}"
+      become_method: su
       with_items:
-        - { path: '~/.runtime_files', mode: '0755' }
+        - { path: '~/.runtime_files', mode: '0755', become: 'no' }
 
     - name: Create files
       file:
         path: "{{ item.path }}"
         mode: "{{ item.mode }}"
         state: touch
+      become: "{{ item.become }}"
+      become_method: su
       with_items:
-        - { path: '~/.runtime_files/input', mode: '0744' }
-        - { path: '~/.runtime_files/output', mode: '0744' }
-        - { path: '~/.runtime_files/source', mode: '0744' }
-        - { path: '~/.runtime_files/compiled', mode: '0755' }
+        - { path: '~/.runtime_files/input', mode: '0744', become: 'no' }
+        - { path: '~/.runtime_files/output', mode: '0744', become: 'no' }
+        - { path: '~/.runtime_files/source', mode: '0744', become: 'no' }
+        - { path: '~/.runtime_files/compiled', mode: '0755', become: 'no' }
