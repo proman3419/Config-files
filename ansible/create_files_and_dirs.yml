@@ -1,4 +1,4 @@
-- name: "Create files"
+- name: Create files and dirs
   hosts: localhost
   connection: local 
   tasks:
@@ -10,7 +10,7 @@
       become: "{{ item.become }}"
       become_method: su
       with_items:
-        - { path: '~/.runtime_files', mode: '0755', become: 'no' }
+        - { path: "'{{ lookup('env', 'RUNTIME_FILES_DIR') }}'" , mode: '0755', become: 'no' }
 
     - name: Create files
       file:
