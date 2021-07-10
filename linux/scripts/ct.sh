@@ -12,13 +12,11 @@ name_to_relative_path["c"]="c.c"
 name_to_relative_path["cpp"]="cpp.cpp"
 name_to_relative_path["cppcp"]="cp.cpp"
 name_to_relative_path["py"]="py.py"
-name_to_relative_path["template"]="template"
 
 name_to_description["c"]="Standard C"
 name_to_description["cpp"]="Standard C++"
 name_to_description["cppcp"]="Competitive programming C++"
 name_to_description["py"]="Standard Python"
-name_to_description["template"]="Testing directories"
 
 
 #-------------------------------------------------------------------------------
@@ -31,7 +29,7 @@ print_help() {
     echo "All templates are located in ${TEMPLATES_DIR}."
     echo
 
-    printf '%-20s' "TEMPLATE_NAME" "relative_path" "DESCRIPTION"
+    printf '%-20s' "TEMPLATE_NAME" "RELATIVE_PATH" "DESCRIPTION"
     echo
     for i in "${!name_to_relative_path[@]}"; do
         printf '%-20s' "${i}" "${name_to_relative_path[$i]}"  "${name_to_description[$i]}"
