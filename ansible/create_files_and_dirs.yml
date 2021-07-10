@@ -10,7 +10,7 @@
       become: "{{ item.become }}"
       become_method: su
       with_items:
-        - { path: "'{{ lookup('env', 'RUNTIME_FILES_DIR') }}'" , mode: '0755', become: 'no' }
+        - { path: "{{ lookup('env', 'RUNTIME_FILES_DIR') }}" , mode: '0755', become: 'no' }
 
     - name: Create files
       file:
@@ -20,7 +20,7 @@
       become: "{{ item.become }}"
       become_method: su
       with_items:
-        - { path: '~/.runtime_files/input', mode: '0744', become: 'no' }
-        - { path: '~/.runtime_files/output', mode: '0744', become: 'no' }
-        - { path: '~/.runtime_files/source', mode: '0744', become: 'no' }
-        - { path: '~/.runtime_files/compiled', mode: '0755', become: 'no' }
+        - { path: "{{ lookup('env', 'RUNTIME_FILES_DIR') }}/input", mode: '0644', become: 'no' }
+        - { path: "{{ lookup('env', 'RUNTIME_FILES_DIR') }}/output", mode: '0644', become: 'no' }
+        - { path: "{{ lookup('env', 'RUNTIME_FILES_DIR') }}/source", mode: '0644', become: 'no' }
+        - { path: "{{ lookup('env', 'RUNTIME_FILES_DIR') }}/compiled", mode: '0755', become: 'no' }
