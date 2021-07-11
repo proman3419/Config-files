@@ -176,6 +176,7 @@ PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 export SCRIPTS_DIR="$HOME/Documents/configs/linux/scripts"
 export TEMPLATES_DIR="$HOME/Documents/configs/templates"
 export RUNTIME_FILES_DIR="$HOME/.runtime_files"
+export RUN_MODULES_DIR="$HOME/Documents/configs/linux/scripts/run_modules"
 
 # Temporary paths
 export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"

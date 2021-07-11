@@ -12,3 +12,5 @@ Linux reads from one of these files, checking in the following order:
 Setting PATH in /etc/environment may not work because other scripts may overwrite it (that is the case for example on Debian).
 
 Environment variables for specific users should be located in their .bashrcs.
+
+Git keeps track of only executable permissions.
