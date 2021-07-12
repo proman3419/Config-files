@@ -16,8 +16,10 @@ target_path=$2
 # RUN_MODULES_DIR
 # RUNTIME_FILES_DIR
 
-interactive=false
 record_time=false
+interactive=false
+to_less=false
+quiet=false
 file_type=-1
 
 declare -A name_to_relative_path
@@ -41,14 +43,22 @@ print_help() {
     echo "Takes file(s) from PATH, and executes using the module MODULE_NAME."
     echo
 
-    echo "Modules are kind of scripts that specify language and additional parameters."
-    echo 
-    
-    echo "Input is read from ${RUNTIME_FILES_DIR}/input by default."
-    echo "In order to read input from keyboard add 'i' at the end of a module's name."
+    echo "Additional flags"
+    printf '  %-17s %s\n' "-t" "record execution time"
+    printf '  %-17s %s\n' "-i" "read input from keyboard (interactive mode)"
+    printf '  %-17s %s\n' "-l" "redirect output to less (less mode)"
+    printf '  %-17s %s\n' "-q" "don't display output unless an error occured (quiet mode)"
     echo
 
-    echo "All modules are located in ${RUN_MODULES_DIR}"
+    echo "By default the script uses the following files:"
+    echo "- ${RUNTIME_FILES_DIR}/input - read input,"
+    echo "- ${RUNTIME_FILES_DIR}/output - redirect output (always),"
+    echo "- ${RUNTIME_FILES_DIR}/source - copy source code (always),"
+    echo "- ${RUNTIME_FILES_DIR}/compiled - compiled executable (always)."
+    echo
+
+    echo "Modules are kind of scripts that specify language and additional parameters."
+    echo "All modules are located in ${RUN_MODULES_DIR}."
     echo
 
     printf '%-20s' "MODULE_NAME" "RELATIVE_PATH" "DESCRIPTION"
@@ -62,17 +72,31 @@ print_help() {
 read_flags() {
     if [[ $1 == "--help" ]]; then
         print_help
+        exit 0
     fi
 
     for ((i=$mandatory_args_cnt+1; i <= $#; i++)); do
         case ${!i} in
+        "-t")
+            record_time=true
+            ;;
         "-i")
             interactive=true
             ;;
-        "-t")
-            record_time=true
-            echo $record_time
+        "-l")
+            to_less=true
+            if [[ "$interactive" = true ]]; then
+                echo "Choose either -i, -l or -q flag"
+                exit 1
+            fi
             ;;
+        "-q")
+            quiet=true
+            if [[ "$interactive" = true || "$to_less" = true ]]; then
+                echo "Choose either -i, -l or -q flag"
+                exit 1
+            fi
+            ;;  
         *)
             ;;
         esac
@@ -91,9 +115,23 @@ check_file_type() {
     fi
 }
 
+print_mode() {
+    if [[ "$interactive" = true ]]; then
+        echo "Using interactive mode"
+    elif [[ $to_less = true ]]; then
+        echo "Using less mode"
+    elif [[ $quiet = true ]]; then
+        echo "Using quiet mode"
+    else
+        echo "Using default mode"
+    fi    
+}
+
 read_flags "$@"
 
-if [[ -z ${name_to_relative_path[$1]} ]]; then
+if [[ $# -lt 2 ]]; then
+    echo "Missing argument(s)"
+elif [[ -z ${name_to_relative_path[$1]} ]]; then
     echo "No such module"
 elif [[ !(-e "${RUN_MODULES_DIR}/${name_to_relative_path[$1]}") ]]; then
     echo "Missing module file(s)"
@@ -104,7 +142,7 @@ else
     if [[ $file_type -ne -1 ]]; then
         if [[ -x $module_full_path ]]; then
             echo "Running the module '${module_name}' on '${target_path}'"
-            echo
+            print_mode
 
             if [[ "$record_time" = true ]]; then
                 time source $module_full_path
