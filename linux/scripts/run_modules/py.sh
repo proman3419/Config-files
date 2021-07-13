@@ -1,6 +1,6 @@
 #!/bin/bash
 
-run_file() {
+run() {
     run_command="python3 $1"
 
     if [[ "$interactive" = true ]]; then
@@ -10,7 +10,7 @@ run_file() {
         (cat "${RUNTIME_FILES_DIR}/input" | eval $run_command | tee "${RUNTIME_FILES_DIR}/output") | less
     elif [[ "$quiet" = true ]]; then
         (cat "${RUNTIME_FILES_DIR}/input" | eval $run_command) &> "${RUNTIME_FILES_DIR}/output"
-        
+
         if [[ $? -ne 0 ]]; then
             echo
             cat "${RUNTIME_FILES_DIR}/output"
@@ -23,14 +23,10 @@ run_file() {
     cp $1 "${RUNTIME_FILES_DIR}/source"
 }
 
-run_dir() {
-    echo "Directories are not supported for this module"
-}
-
 if [[ $file_type -eq 0 ]]; then
-    run_file $target_path
+    run $target_path
 elif [[ $file_type -eq 1 ]]; then
-    run_dir $target_path
+    echo "Directories are not supported for this module"
 else
     echo "Unsupported file type"
 fi
