@@ -16,12 +16,6 @@ target_path=$2
 # RUN_MODULES_DIR
 # RUNTIME_FILES_DIR
 
-record_time=false
-interactive=false
-to_less=false
-quiet=false
-file_type=-1
-
 declare -A name_to_relative_path
 declare -A name_to_description
 
@@ -32,6 +26,12 @@ name_to_relative_path["py"]="py.sh"
 name_to_description["c"]="Standard C"
 name_to_description["cpp"]="Standard C++"
 name_to_description["py"]="Standard Python"
+
+record_time=false
+interactive=false
+to_less=false
+quiet=false
+file_type=-1
 
 
 #-------------------------------------------------------------------------------

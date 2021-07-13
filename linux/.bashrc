@@ -173,10 +173,11 @@ PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
 # Constant paths
-export SCRIPTS_DIR="$HOME/Documents/configs/linux/scripts"
-export TEMPLATES_DIR="$HOME/Documents/configs/templates"
+export CONFIGS_DIR="$HOME/Documents/configs"
+export SCRIPTS_DIR="$CONFIGS_DIR/linux/scripts"
+export TEMPLATES_DIR="$CONFIGS_DIR/templates"
 export RUNTIME_FILES_DIR="$HOME/.runtime_files"
-export RUN_MODULES_DIR="$HOME/Documents/configs/linux/scripts/run_modules"
+export RUN_MODULES_DIR="$CONFIGS_DIR/linux/scripts/run_modules"
 
 # Temporary paths
 export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"
