@@ -1,0 +1,6 @@
+A File Icon
+Anaconda
+Dracula Color Scheme
+PackageDev
+SideBarEnhancements
+zzz A File Icon zzz
