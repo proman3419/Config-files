@@ -1,6 +1,6 @@
 - name: Update additional configs
   hosts: localhost
-  connection: local 
+  connection: local
   tasks:
     - name: Copy multiple files with different permissions
       copy:
@@ -10,4 +10,13 @@
       become: "{{ item.become }}"
       become_method: su
       with_items:
-        - { src: '', dest: '', mode: '0644', become: 'no' }
+        - { src: '../linux/{{ ansible_hostname }}/i3.conf', dest: '/tmp', mode: '0644', become: 'no' }
+        - { src: '../linux/{{ ansible_hostname }}/i3status.conf', dest: '/tmp', mode: '0644', become: 'no' }
+
+    - name: Rename multiple files
+      command: mv "{{ item.src }}" "{{ item.dest }}"
+      become: "{{ item.become }}"
+      become_method: su
+      with_items:
+        - { src: '/tmp/i3.conf', dest: '~/.config/i3/config', become: 'no' }
+        - { src: '/tmp/i3status.conf', dest: '~/.config/i3status/config', become: 'no' }
