@@ -15,4 +15,4 @@ sudo apt update
 echo
 
 echo ">>> Installing ansible"
-sudo apt install ansible
+sudo apt --assume-yes install ansible

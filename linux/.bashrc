@@ -164,14 +164,6 @@ function CPS1() {
 # Environment variables
 #-------------------------------------------------------------
 
-# Modify PATH
-PATH="$PATH:/opt"
-PATH="$PATH:/usr/bin/js"
-PATH="$PATH:/usr/share/playonlinux/playonlinux"
-PATH="$PATH:$HOME/Documents/soldat/local_server"
-PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
-PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
-
 # Constant paths
 export CONFIGS_DIR="$HOME/Documents/configs"
 export SCRIPTS_DIR="$CONFIGS_DIR/linux/scripts"
@@ -184,6 +176,14 @@ export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"
+
+# Modify PATH
+PATH="$PATH:/opt"
+PATH="$PATH:/usr/bin/js"
+PATH="$PATH:/usr/share/playonlinux/playonlinux"
+PATH="$PATH:$HOME/Documents/soldat/local_server"
+PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
+PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
 
 #-------------------------------------------------------------------------------

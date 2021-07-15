@@ -1,0 +1,24 @@
++ ansible
+- caprine (https://github.com/sindresorhus/caprine)
+- chromium
+- conky
+- discord
+- evince
+- feh
+- git
+- gzip
+- i3
+- mypaint
+- nautilus
+- nixnote2
+- python3
+- redshift
+- rhythmbox
+- scrot
+- sublime-merge
+- sublime-text
+- teams
+- thunderbird
+- tree
+- vlc
+- zip
