@@ -39,7 +39,7 @@ file_type=-1
 #-------------------------------------------------------------------------------
 
 print_help() {
-    echo "Usage: run [MODULE_NAME] [PATH]"
+    echo "Usage: run.sh [MODULE_NAME] [PATH]"
     echo "Takes file(s) from PATH, and executes using the module MODULE_NAME."
     echo
 
@@ -73,6 +73,11 @@ read_flags() {
     if [[ $1 == "--help" ]]; then
         print_help
         exit 0
+    fi
+
+    if [[ $# -lt $mandatory_args_cnt ]]; then
+        echo "Missing argument(s)"
+        exit 1
     fi
 
     for ((i=$mandatory_args_cnt+1; i <= $#; i++)); do
@@ -129,9 +134,7 @@ print_mode() {
 
 read_flags "$@"
 
-if [[ $# -lt 2 ]]; then
-    echo "Missing argument(s)"
-elif [[ -z ${name_to_relative_path[$1]} ]]; then
+if [[ -z ${name_to_relative_path[$1]} ]]; then
     echo "No such module"
 elif [[ !(-e "${RUN_MODULES_DIR}/${name_to_relative_path[$1]}") ]]; then
     echo "Missing module file(s)"

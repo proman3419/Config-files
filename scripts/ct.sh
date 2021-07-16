@@ -7,6 +7,7 @@
 # Parameters:
 # $1 - template's name or --help
 # $2 - path to a file or a directory
+mandatory_args_cnt=2
 template_name=$1
 target_path=$2
 
@@ -36,7 +37,7 @@ template_relative_path=${name_to_relative_path[$template_name]}
 #-------------------------------------------------------------------------------
 
 print_help() {
-    echo "Usage: ct [TEMPLATE_NAME] [PATH]"
+    echo "Usage: ct.sh [TEMPLATE_NAME] [PATH]"
     echo "Creates a copy of template TEMPLATE_NAME in PATH, don't specify the extension in PATH."
     echo
 
@@ -56,13 +57,16 @@ read_flags() {
         print_help
         exit 0
     fi
+
+    if [[ $# -lt $mandatory_args_cnt ]]; then
+        echo "Missing argument(s)"
+        exit 1
+    fi
 }
 
 read_flags "$@"
 
-if [[ $# -ne 2 ]]; then
-    echo "Illegal number of parameters"
-elif [[ -z $template_relative_path ]]; then
+if [[ -z $template_relative_path ]]; then
     echo "No such template"
 elif [[ !(-e "${TEMPLATES_DIR}/${template_relative_path}") ]]; then
     echo "Missing template file(s)"

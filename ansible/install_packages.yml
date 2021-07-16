@@ -1,0 +1,51 @@
+- name: Create files and dirs
+  hosts: localhost
+  connection: local
+  vars:
+    scripts_dir: "{{ lookup('env', 'SCRIPTS_DIR') }}"
+  become: yes
+  tasks:
+    # - name: Add repositories
+    #   apt_repository:
+    #     repo: "{{ item.repo }}"
+    #   with_items:
+    #     - { repo: "ppa:gnome3-team/gnome3", package_name: "evince" }
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install multiple packages with apt
+      apt:
+        name: "{{ item.name }}"
+      with_items:
+        - { name: "conky-all" }
+        - { name: "evince" }
+        - { name: "feh" }
+        - { name: "git" }
+        - { name: "gzip" }
+        - { name: "i3" }
+        - { name: "mypaint" }
+        - { name: "nautilus" }
+        - { name: "nixnote2" }
+        - { name: "python3" }
+        - { name: "rhythmbox" }
+        - { name: "scrot" }
+        - { name: "thunderbird" }
+        - { name: "tree" }
+        - { name: "vlc" }
+
+    - name: Install multiple packages with wget_installer.sh
+      shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
+      with_items: 
+        - { url: "https://github.com/sindresorhus/caprine/releases/download/v2.53.0/caprine_2.53.0_amd64.deb", path: "/tmp/caprine_package.deb", name: "Caprine" }
+        - { url: "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb", path: "/tmp/chrome_package.deb", name: "Chrome" }
+        - { url: "https://discord.com/api/download?platform=linux&format=deb", path: "/tmp/discord_package.deb", name: "Discord" }
+        - { url: "https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.4.00.4855_amd64.deb", path: "/tmp/teams_package.deb", name: "Teams" }
+
+    - name: Install packages using dedicated scripts
+      shell: "{{ item.script_path }}"
+      with_items:
+        - { script_path: "{{ scripts_dir }}/install_packages/ansible_install.sh" }
+        - { script_path: "{{ scripts_dir }}/install_packages/sublime-text_install.sh" }
+        - { script_path: "{{ scripts_dir }}/install_packages/sublime-merge_install.sh" }

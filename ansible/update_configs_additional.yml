@@ -22,3 +22,4 @@
       with_items:
         - { src: '/tmp/i3.conf', dest: '~/.config/i3/config', become: 'no' }
         - { src: '/tmp/i3status.conf', dest: '~/.config/i3status/config', become: 'no' }
+        - { src: '/usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/rect-overlay', dest: '/usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/_rect-overlay', become: 'yes'} # Fix sharing screen with Teams for i3wm
