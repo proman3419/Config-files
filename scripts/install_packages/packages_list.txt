@@ -1,11 +1,11 @@
 + ansible
 - caprine (https://github.com/sindresorhus/caprine)
-- chromium
-- conky
++ chrome
++ conky
 - discord
-- evince
-- feh
-- git
++/- evince
++ feh
++ git
 - gzip
 - i3
 - mypaint

@@ -166,10 +166,10 @@ function CPS1() {
 
 # Constant paths
 export CONFIGS_DIR="$HOME/Documents/configs"
-export SCRIPTS_DIR="$CONFIGS_DIR/linux/scripts"
+export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
 export TEMPLATES_DIR="$CONFIGS_DIR/templates"
 export RUNTIME_FILES_DIR="$HOME/.runtime_files"
-export RUN_MODULES_DIR="$CONFIGS_DIR/linux/scripts/run_modules"
+export RUN_MODULES_DIR="$CONFIGS_DIR/scripts/run_modules"
 
 # Temporary paths
 export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"
