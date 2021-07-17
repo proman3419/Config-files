@@ -10,7 +10,6 @@
         mode: "{{ item.mode }}"
         state: directory
       become: "{{ item.become }}"
-      become_method: su
       with_items:
         - { path: "{{ runtime_files_dir }}" , mode: '0755', become: 'no' }
         - { path: "~/.config/i3status", mode: '0744', become: 'no' }
@@ -21,7 +20,6 @@
         mode: "{{ item.mode }}"
         state: touch
       become: "{{ item.become }}"
-      become_method: su
       with_items:
         - { path: "{{ runtime_files_dir }}/input", mode: '0644', become: 'no' }
         - { path: "{{ runtime_files_dir }}/output", mode: '0644', become: 'no' }

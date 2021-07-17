@@ -8,7 +8,6 @@
         dest: "{{ item.dest }}"
         mode: "{{ item.mode }}"
       become: "{{ item.become }}"
-      become_method: su
       with_items:
         - { src: '../linux/.bash_aliases', dest: '~', mode: '0644', become: 'no' }
         - { src: '../linux/.bash_functions', dest: '~', mode: '0644', become: 'no' }

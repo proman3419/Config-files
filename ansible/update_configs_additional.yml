@@ -8,7 +8,6 @@
         dest: "{{ item.dest }}"
         mode: "{{ item.mode }}"
       become: "{{ item.become }}"
-      become_method: su
       with_items:
         - { src: '../linux/{{ ansible_hostname }}/i3.conf', dest: '/tmp', mode: '0644', become: 'no' }
         - { src: '../linux/{{ ansible_hostname }}/i3status.conf', dest: '/tmp', mode: '0644', become: 'no' }
@@ -18,8 +17,6 @@
     - name: Rename multiple files
       command: mv "{{ item.src }}" "{{ item.dest }}"
       become: "{{ item.become }}"
-      become_method: su
       with_items:
         - { src: '/tmp/i3.conf', dest: '~/.config/i3/config', become: 'no' }
         - { src: '/tmp/i3status.conf', dest: '~/.config/i3status/config', become: 'no' }
-        - { src: '/usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/rect-overlay', dest: '/usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/_rect-overlay', become: 'yes'} # Fix sharing screen with Teams for i3wm

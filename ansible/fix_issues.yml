@@ -1,0 +1,13 @@
+- name: Create files and dirs
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Check if rect-overlay hasn't been moved yet
+      stat:
+        path: /usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/rect-overlay
+      register: check_result
+
+    - name: Move rec-overlay in order to fix sharing screen with Teams for i3wm
+      command: mv /usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/rect-overlay /usr/share/teams/resources/app.asar.unpacked/node_modules/slimcore/bin/_rect-overlay
+      become: yes
+      when: check_result.stat.exists

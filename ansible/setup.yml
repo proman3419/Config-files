@@ -5,8 +5,14 @@
 - name: Update base configs
   import_playbook: update_configs_base.yml
 
+- name: Install packages
+  import_playbook: install_packages.yml
+
 - name: Create files and dirs
   import_playbook: create_files_and_dirs.yml
 
 - name: Update additional configs
   import_playbook: update_configs_additional.yml
+
+- name: Fix issues
+  import_playbook: fix_issues.yml
