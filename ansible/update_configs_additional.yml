@@ -13,6 +13,7 @@
         - { src: '../linux/{{ ansible_hostname }}/i3status.conf', dest: '/tmp', mode: '0644', become: 'no' }
         - { src: '../linux/{{ ansible_hostname }}/layouts', dest: '~/.config/i3', mode: '0644', become: 'no' }
         - { src: '../sublime_text/settings.sublime-settings', dest: '~/Documents/configs/sublime_text', mode: '0644', become: 'no' }
+        - { src: '../linux/.xinitrc', dest: '~', mode: '0644', become: 'no' }
 
     - name: Rename multiple files
       command: mv "{{ item.src }}" "{{ item.dest }}"
