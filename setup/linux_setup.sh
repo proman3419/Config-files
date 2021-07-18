@@ -32,7 +32,7 @@ git clone https://github.com/proman3419/Config-files.git ~/Documents/configs
 echo
 
 echo ">>> Install Ansible"
-sudo ~/Documents/scripts/install_packages/ansible_install.sh
+sudo ~/Documents/configs/scripts/install_packages/ansible_install.sh
 echo
 
 echo ">>> Run Ansible playbook that continues the setup"
