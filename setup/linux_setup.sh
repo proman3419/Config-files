@@ -36,4 +36,4 @@ sudo ~/Documents/scripts/install_packages/ansible_install.sh
 echo
 
 echo ">>> Run Ansible playbook that continues the setup"
-ansible-playbook ~/Documents/configs/ansible/setup -K
+ansible-playbook ~/Documents/configs/ansible/setup.yml -K
