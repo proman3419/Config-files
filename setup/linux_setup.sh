@@ -2,7 +2,7 @@
 
 # >>> Run as the user that should be configured.
 # >>> Remember to set hostname properly because depending on it different configs will be imported.
-# >>> Look for available options in the private repository.
+# >>> Look for available options in the linux directory.
 
 # >>> Sudo privileges are required, steps for Debian:
 # su -l
@@ -11,7 +11,7 @@
 # logout
 
 # >>> Download the setup script.
-# wget https://raw.githubusercontent.com/proman3419/Config-files-public/master/linux_setup.sh
+# wget https://raw.githubusercontent.com/proman3419/Config-files/master/setup/linux_setup.sh
 
 # >>> Add execute permission for the script.
 # chmod +x linux_setup.sh
@@ -27,17 +27,8 @@ echo ">>> Install git"
 sudo apt --assume-yes install git
 echo
 
-echo ">>> Generate an SSH key"
-yes "n" | ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
-echo; echo
-
-echo ">>> This is the public key, add it to your GitHub profile"
-cat ~/.ssh/id_rsa.pub
-read -p "<<< Press ENTER to continue"
-echo
-
 echo ">>> Clone the repository with configs"
-git clone git@github.com:proman3419/Config-files.git ~/Documents/configs
+git clone https://github.com/proman3419/Config-files.git ~/Documents/configs
 echo
 
 echo ">>> Install Ansible"
