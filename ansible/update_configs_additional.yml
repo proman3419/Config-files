@@ -14,6 +14,7 @@
         - { src: '../linux/{{ ansible_hostname }}/layouts', dest: '~/.config/i3', mode: '0644', become: 'no' }
         - { src: '../sublime_text/settings.sublime-settings', dest: '~/Documents/configs/sublime_text', mode: '0644', become: 'no' }
         - { src: '../linux/.xinitrc', dest: '~', mode: '0644', become: 'no' }
+        - { src: '../linux/.profile', dest: '~', mode: '0644', become: 'no' }
 
     - name: Rename files
       command: mv "{{ item.src }}" "{{ item.dest }}"

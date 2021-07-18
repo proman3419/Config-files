@@ -13,4 +13,4 @@ sudo apt update
 echo
 
 echo ">>> Install VirtualBox"
-sudo apt install virtualbox-6.0
+sudo apt install virtualbox-6.1

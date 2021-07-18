@@ -176,6 +176,7 @@ export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"
+export TERMINAL="xfce4-terminal"
 
 # Modify PATH
 PATH="$PATH:/opt"
