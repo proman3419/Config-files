@@ -15,7 +15,7 @@
       apt:
         update_cache: yes
 
-    - name: Install multiple packages with apt
+    - name: Install packages with apt
       apt:
         name: "{{ item.name }}"
       with_items:
@@ -35,7 +35,7 @@
         - { name: "tree" }
         - { name: "vlc" }
 
-    - name: Install multiple packages with wget_installer.sh
+    - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
       with_items: 
         - { url: "https://github.com/sindresorhus/caprine/releases/download/v2.53.0/caprine_2.53.0_amd64.deb", path: "/tmp/caprine_package.deb", name: "Caprine" }

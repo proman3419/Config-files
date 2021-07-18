@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local 
   tasks:
-    - name: Copy multiple files with different permissions
+    - name: Copy files with different permissions
       copy:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"

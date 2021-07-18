@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Copy multiple files with different permissions
+    - name: Copy files with different permissions
       copy:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
@@ -15,7 +15,7 @@
         - { src: '../sublime_text/settings.sublime-settings', dest: '~/Documents/configs/sublime_text', mode: '0644', become: 'no' }
         - { src: '../linux/.xinitrc', dest: '~', mode: '0644', become: 'no' }
 
-    - name: Rename multiple files
+    - name: Rename files
       command: mv "{{ item.src }}" "{{ item.dest }}"
       become: "{{ item.become }}"
       with_items:
