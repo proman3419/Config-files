@@ -15,6 +15,7 @@
         - { src: '../sublime_text/settings.sublime-settings', dest: '{{ ansible_env.HOME }}/.config/sublime-text', mode: '0644', become: 'no' }
         - { src: '../linux/.xinitrc', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
         - { src: '../linux/.profile', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
+        - { src: '../linux/{{ ansible_hostname }}/conky.conf', dest: '/tmp', mode: '0644', become: 'no' }
 
     - name: Rename files
       command: mv "{{ item.src }}" "{{ item.dest }}"
@@ -22,3 +23,4 @@
       with_items:
         - { src: '/tmp/i3.conf', dest: '{{ ansible_env.HOME }}/.config/i3/config', become: 'no' }
         - { src: '/tmp/i3status.conf', dest: '{{ ansible_env.HOME }}/.config/i3status/config', become: 'no' }
+        - { src: '/tmp/conky.conf', dest: '{{ ansible_env.HOME }}/.conkyrc', become: 'no' }
