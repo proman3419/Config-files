@@ -35,5 +35,14 @@ echo ">>> Install Ansible"
 sudo ~/Documents/configs/scripts/install_packages/ansible_install.sh
 echo
 
+echo ">>> Load base configs"
+ansible-playbook ~/Documents/configs/ansible/update_configs_base.yml
+echo
+
+echo ">>> Source .bashrc and .profile"
+source ~/.bashrc
+source ~/.profile
+echo
+
 echo ">>> Run Ansible playbook that continues the setup"
 ansible-playbook ~/Documents/configs/ansible/setup.yml -K
