@@ -12,8 +12,8 @@
         - { src: '../linux/{{ ansible_hostname }}/i3.conf', dest: '/tmp', mode: '0644', become: 'no' }
         - { src: '../linux/{{ ansible_hostname }}/i3status.conf', dest: '/tmp', mode: '0644', become: 'no' }
         - { src: '../linux/{{ ansible_hostname }}/layouts', dest: '{{ ansible_env.HOME }}/.config/i3', mode: '0644', become: 'no' }
-        - { src: '../sublime_text/Preferences.sublime-settings', dest: '{{ ansible_env.HOME }}/.config/sublime-text-4/Packages/User', mode: '0644', become: 'no' }
-        - { src: '../sublime_text/syntax_specific/Python.sublime-settings', dest: '{{ ansible_env.HOME }}/.config/sublime-text-4/Packages/User', mode: '0644', become: 'no' }
+        - { src: '../sublime_text/Preferences.sublime-settings', dest: '{{ ansible_env.HOME }}/.config/sublime-text/Packages/User', mode: '0644', become: 'no' }
+        - { src: '../sublime_text/syntax_specific/Python.sublime-settings', dest: '{{ ansible_env.HOME }}/.config/sublime-text/Packages/User', mode: '0644', become: 'no' }
         - { src: '../linux/.xinitrc', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
         - { src: '../linux/.profile', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
         - { src: '../linux/{{ ansible_hostname }}/conky.conf', dest: '/tmp', mode: '0644', become: 'no' }
