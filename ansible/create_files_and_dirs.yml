@@ -12,7 +12,7 @@
       become: "{{ item.become }}"
       with_items:
         - { path: "{{ runtime_files_dir }}" , mode: '0755', become: 'no' }
-        - { path: "~/.config/i3status", mode: '0744', become: 'no' }
+        - { path: "{{ ansible_env.HOME }}/.config/i3status", mode: '0744', become: 'no' }
 
     - name: Create files
       file:

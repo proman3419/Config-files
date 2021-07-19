@@ -9,6 +9,6 @@
         mode: "{{ item.mode }}"
       become: "{{ item.become }}"
       with_items:
-        - { src: '../linux/.bash_aliases', dest: '~', mode: '0644', become: 'no' }
-        - { src: '../linux/.bash_functions', dest: '~', mode: '0644', become: 'no' }
-        - { src: '../linux/.bashrc', dest: '~', mode: '0644', become: 'no' }
+        - { src: '../linux/.bash_aliases', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
+        - { src: '../linux/.bash_functions', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
+        - { src: '../linux/.bashrc', dest: '{{ ansible_env.HOME }}', mode: '0644', become: 'no' }
