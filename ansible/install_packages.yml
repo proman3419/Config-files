@@ -31,6 +31,7 @@
         - { name: "git" }
         - { name: "gzip" }
         - { name: "i3" }
+        - { name: "i3status" }
         - { name: "mypaint" }
         - { name: "nautilus" }
         - { name: "nixnote2" }
