@@ -44,6 +44,7 @@
         - { name: "xinit" }
         - { name: "xfce4-terminal" }
         - { name: "htop" }
+        - { name: "libreoffice" }
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
@@ -56,6 +57,5 @@
     - name: Install packages using dedicated scripts
       shell: "{{ item.script_path }}"
       with_items:
-        - { script_path: "{{ scripts_dir }}/install_packages/ansible_install.sh" }
         - { script_path: "{{ scripts_dir }}/install_packages/sublime-text_install.sh" }
         - { script_path: "{{ scripts_dir }}/install_packages/sublime-merge_install.sh" }
