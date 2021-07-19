@@ -5,11 +5,17 @@
     scripts_dir: "{{ lookup('env', 'SCRIPTS_DIR') }}"
   become: yes
   tasks:
-    # - name: Add repositories
-    #   apt_repository:
-    #     repo: "{{ item.repo }}"
-    #   with_items:
-    #     - { repo: "ppa:gnome3-team/gnome3", package_name: "evince" }
+    - name: Add apt repositories
+      apt_repository:
+        repo: "{{ item.repo }}"
+        state: present
+      with_items:
+        - { repo: "deb http://deb.debian.org/debian/ testing main contrib non-free" }
+        - { repo: "deb-src http://deb.debian.org/debian/ testing main contrib non-free" }
+        - { repo: "deb http://deb.debian.org/debian/ testing-updates main contrib non-free" }
+        - { repo: "deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free" }
+        - { repo: "deb http://deb.debian.org/debian-security testing-security main" }
+        - { repo: "deb-src http://deb.debian.org/debian-security testing-security main" }
 
     - name: Update apt cache
       apt:
