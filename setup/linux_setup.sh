@@ -16,8 +16,8 @@
 # >>> Add execute permission for the script.
 # chmod +x linux_setup.sh
 
-# >>> Run the script.
-# ./linux_setup.sh
+# >>> Run the script, it needs to be source instead of ./.
+# source linux_setup.sh
 
 echo ">>> Update apt cache"
 sudo apt update

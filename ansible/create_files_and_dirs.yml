@@ -12,7 +12,11 @@
       become: "{{ item.become }}"
       with_items:
         - { path: "{{ runtime_files_dir }}" , mode: '0755', become: 'no' }
+        - { path: "{{ ansible_env.HOME }}/.config/i3", mode: '0744', become: 'no' }
         - { path: "{{ ansible_env.HOME }}/.config/i3status", mode: '0744', become: 'no' }
+        - { path: "{{ ansible_env.HOME }}/.config/sublime-text", mode: '0700', become: 'no' }
+        - { path: "{{ ansible_env.HOME }}/.config/sublime-text/Packages", mode: '0700', become: 'no' }
+        - { path: "{{ ansible_env.HOME }}/.config/sublime-text/Packages/User", mode: '0700', become: 'no' }
 
     - name: Create files
       file:
