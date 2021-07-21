@@ -45,6 +45,7 @@
         - { name: "xfce4-terminal" }
         - { name: "htop" }
         - { name: "libreoffice" }
+        - { name: "xclip" }
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""

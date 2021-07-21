@@ -5,7 +5,8 @@ alias vi='vim'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias gput='nvidia-smi -q -d temperature'
-alias wificonnect='/usr/local/bin/wifi_connect.sh'
+alias setclip='xclip -selection c'
+alias getclip='xclip -selection c -o'
 
 # Games
 alias soldat='/usr/share/playonlinux/playonlinux --run "Soldat" %F'
