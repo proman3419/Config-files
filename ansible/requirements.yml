@@ -1,0 +1,3 @@
+# For generating SSH keys
+collections:
+  - name: community.crypto

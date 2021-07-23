@@ -35,6 +35,10 @@ echo ">>> Install Ansible"
 sudo ~/Documents/configs/scripts/install_packages/ansible_install.sh
 echo
 
+echo ">>> Install Ansible requirements"
+ansible-galaxy install -r ~/Documents/configs/ansible/requirements.yml
+echo
+
 echo ">>> Load base configs"
 ansible-playbook ~/Documents/configs/ansible/update_configs_base.yml
 echo

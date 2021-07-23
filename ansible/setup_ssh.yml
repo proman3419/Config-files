@@ -1,0 +1,38 @@
+- name: Setup SSH
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Check if there is the .ssh directory
+      stat:
+        path: "{{ ansible_env.HOME }}/.ssh"
+      register: ssh_dir
+
+    - name: Create the .ssh directory if non-existent
+      file:
+        path: "{{ ansible_env.HOME }}/.ssh"
+        mode: "0700"
+        state: directory
+      when: not ssh_dir.stat.exists      
+
+    - name: Check if the user doesn't already have a private SSH key
+      stat:
+        path: "{{ ansible_env.HOME }}/.ssh/id_rsa"
+      register: private
+
+    - name: Check if the user doesn't already have a public SSH key
+      stat:
+        path: "{{ ansible_env.HOME }}/.ssh/id_rsa.pub"
+      register: public
+
+    - name: Generate a pair of SSH keys
+      openssh_keypair:
+        path: "{{ ansible_env.HOME }}/.ssh/id_rsa"
+      when: not ssh_dir.stat.exists or (not private.stat.exists or not public.stat.exists)
+
+    - name: Register id_rsa.pub's content
+      command: cat ~/.ssh/id_rsa.pub
+      register: id_rsa_pub_content
+
+    - name: Print id_rsa.pub's content
+      debug:
+        msg: "{{ id_rsa_pub_content.stdout }}"
