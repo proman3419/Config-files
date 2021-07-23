@@ -1,6 +1,6 @@
 - name: Setup
   hosts: localhost
-  connection: local 
+  connection: local
 
 - name: Update base configs
   import_playbook: update_configs_base.yml
@@ -14,5 +14,12 @@
 - name: Update additional configs
   import_playbook: update_configs_additional.yml
 
+- name: Setup SSH
+  import_playbook: setup_ssh.yml
+
 - name: Fix issues
   import_playbook: fix_issues.yml
+
+# Call playbook based on $HOSTNAME, doesn't work  atm
+# - name: Perform machine specific tasks
+#   import_playbook: "machine_specific/{{ lookup('env', 'HOSTNAME') }}.yml"

@@ -1,0 +1,11 @@
+- name: Perform machine specific tasks
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install network card driver
+      apt:
+        name: firmware-iwlwifi
+
+    - name: Install nmcli for managing wifi connections
+      apt:
+        name: network-manager

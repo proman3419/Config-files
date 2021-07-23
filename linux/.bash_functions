@@ -6,5 +6,12 @@ set-title() {
 }
 
 wifi_connect() {
-    nmcli dev wifi connect $1 password $2
+    read -p "network name: " network_name
+    read -p "password: " -s password
+    echo
+    nmcli dev wifi connect $network_name password $password
+}
+
+wifi_show() {
+    nmcli dev wifi
 }
