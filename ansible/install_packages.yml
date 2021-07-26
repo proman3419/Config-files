@@ -23,29 +23,29 @@
 
     - name: Install packages with apt
       apt:
-        name: "{{ item.name }}"
-      with_items:
-        - { name: "conky-all" }
-        - { name: "evince" }
-        - { name: "feh" }
-        - { name: "git" }
-        - { name: "gzip" }
-        - { name: "i3" }
-        - { name: "i3status" }
-        - { name: "mypaint" }
-        - { name: "nautilus" }
-        - { name: "nixnote2" }
-        - { name: "python3" }
-        - { name: "rhythmbox" }
-        - { name: "scrot" }
-        - { name: "thunderbird" }
-        - { name: "tree" }
-        - { name: "vlc" }
-        - { name: "xinit" }
-        - { name: "xfce4-terminal" }
-        - { name: "htop" }
-        - { name: "libreoffice" }
-        - { name: "xclip" }
+        state: present
+        name:
+          - conky-all
+          - evince
+          - feh
+          - git
+          - gzip
+          - i3
+          - i3status
+          - mypaint
+          - nautilus
+          - nixnote2
+          - python3
+          - rhythmbox
+          - scrot
+          - thunderbird
+          - tree
+          - vlc
+          - xinit
+          - xfce4-terminal
+          - htop
+          - libreoffice
+          - xclip
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
