@@ -5,7 +5,9 @@
     - name: Install network card driver
       apt:
         name: firmware-iwlwifi
+      become: yes
 
     - name: Install nmcli for managing wifi connections
       apt:
         name: network-manager
+      become: yes
