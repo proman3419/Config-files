@@ -1,4 +1,4 @@
-- name: Create files and dirs
+- name: Fix issues
   hosts: localhost
   connection: local
   tasks:

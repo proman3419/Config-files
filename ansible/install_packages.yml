@@ -1,4 +1,4 @@
-- name: Create files and dirs
+- name: Install packages
   hosts: localhost
   connection: local
   vars:
