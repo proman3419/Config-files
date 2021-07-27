@@ -46,6 +46,8 @@
           - htop
           - libreoffice
           - xclip
+          - pulseaudio
+          - alsa-utils
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
