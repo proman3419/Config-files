@@ -48,6 +48,7 @@
           - xclip
           - pulseaudio
           - alsa-utils
+          - xbacklight
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""

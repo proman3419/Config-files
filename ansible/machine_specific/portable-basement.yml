@@ -11,3 +11,10 @@
       apt:
         name: network-manager
       become: yes
+
+    - name: Fix xbacklight
+      copy:
+        src: ../../linux/portable-basement/xorg.conf
+        dest: /etc/X11/
+        mode: 0644
+      become: yes
