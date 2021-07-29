@@ -57,6 +57,7 @@
         - { url: "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb", path: "/tmp/chrome_package.deb", name: "Chrome" }
         - { url: "https://discord.com/api/download?platform=linux&format=deb", path: "/tmp/discord_package.deb", name: "Discord" }
         - { url: "https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.4.00.4855_amd64.deb", path: "/tmp/teams_package.deb", name: "Teams" }
+        - { url: "https://cdn.akamai.steamstatic.com/client/installer/steam.deb", path: "/tmp/steam_package.deb", name: "Steam" }
 
     - name: Install packages using dedicated scripts
       shell: "{{ item.script_path }}"

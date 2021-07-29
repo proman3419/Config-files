@@ -19,6 +19,15 @@
 # >>> Run the script, it needs to be source instead of ./.
 # source linux_setup.sh
 
+set_env_vars() {
+    export CONFIGS_DIR=/tmp/configs
+    export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
+}
+
+echo ">>> Set environment variables"
+set_env_vars
+echo
+
 echo ">>> Update apt cache"
 sudo apt update
 echo
@@ -28,24 +37,28 @@ sudo apt --assume-yes install git
 echo
 
 echo ">>> Clone the repository with configs"
-git clone https://github.com/proman3419/Config-files.git ~/Documents/configs
+git clone https://github.com/proman3419/Config-files.git $CONFIGS_DIR
 echo
 
 echo ">>> Install Ansible"
-sudo ~/Documents/configs/scripts/install_packages/ansible_install.sh
+sudo "$SCRIPTS_DIR/install_packages/ansible_install.sh"
 echo
 
 echo ">>> Install Ansible requirements"
-ansible-galaxy install -r ~/Documents/configs/ansible/requirements.yml
+ansible-galaxy install -r "$CONFIGS_DIR/ansible/requirements.yml"
 echo
 
 echo ">>> Load base configs"
-ansible-playbook ~/Documents/configs/ansible/update_configs_base.yml
+ansible-playbook "$CONFIGS_DIR/ansible/update_configs_base.yml"
 echo
 
 echo ">>> Source .bashrc and .profile"
 source ~/.bashrc
 source ~/.profile
+echo
+
+echo ">>> Set environment variables"
+set_env_vars
 echo
 
 echo ">>> Run Ansible playbook that continues the setup"

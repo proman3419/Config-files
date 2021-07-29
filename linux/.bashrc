@@ -164,15 +164,18 @@ function CPS1() {
 # Environment variables
 #-------------------------------------------------------------
 
-# Constant paths
-export CONFIGS_DIR="$HOME/Documents/configs"
+# HOME paths
+export RUNTIME_FILES_DIR="$HOME/.runtime_files"
+
+# DATA_DIR paths
+export DATA_DIR="/media/shared" # where the partition with data is mounted
+export CONFIGS_DIR="$DATA_DIR/Documents/configs"
 export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
 export TEMPLATES_DIR="$CONFIGS_DIR/templates"
-export RUNTIME_FILES_DIR="$HOME/.runtime_files"
 export RUN_MODULES_DIR="$CONFIGS_DIR/scripts/run_modules"
 
 # Temporary paths
-export ASD_REPO_DIR="$HOME/Documents/agh/semestr_2/asd/asd_repo"
+export ASD_REPO_DIR="$DATA_DIR/Documents/agh/semestr_2/asd/asd_repo"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"
@@ -182,7 +185,7 @@ export TERMINAL="xfce4-terminal"
 PATH="$PATH:/opt"
 PATH="$PATH:/usr/bin/js"
 PATH="$PATH:/usr/share/playonlinux/playonlinux"
-PATH="$PATH:$HOME/Documents/soldat/local_server"
+PATH="$PATH:$DATA_DIR/Documents/soldat/local_server"
 PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
