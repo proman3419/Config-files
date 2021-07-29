@@ -33,7 +33,7 @@
           - i3
           - i3status
           - mypaint
-          - nautilus
+          - thunar
           - nixnote2
           - python3
           - rhythmbox
@@ -49,6 +49,7 @@
           - pulseaudio
           - alsa-utils
           - xbacklight
+          - gparted
 
     - name: Install packages with wget_installer.sh
       shell: "{{ scripts_dir }}/install_packages/wget_installer.sh \"{{ item.url }}\" {{ item.path }} \"{{ item.name }}\""
