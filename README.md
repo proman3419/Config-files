@@ -10,3 +10,4 @@
 - [ ] Kill Chrome on shutdown/reboot to prevent crashes
 - [ ] Add Nixnote2 config to playbook
 - [ ] Add Rhythmbox config
+- [ ] Change image viewer
