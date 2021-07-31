@@ -169,13 +169,24 @@ export RUNTIME_FILES_DIR="$HOME/.runtime_files"
 
 # DATA_DIR paths
 export DATA_DIR="/media/shared" # where the partition with data is mounted
-export CONFIGS_DIR="$DATA_DIR/Documents/configs"
+export DOCUMENTS_DIR="$DATA_DIR/Documents"
+export IMPORTANT_DIR="$DATA_DIR/Important"
+export MUSIC_DIR="$DATA_DIR/Music"
+export OTHERS_DIR="$DATA_DIR/Others"
+export PICTURES_DIR="$DATA_DIR/Pictures"
+export VIDEOS_DIR="$DATA_DIR/Videos"
+
+export CONFIGS_DIR="$DOCUMENTS_DIR/configs"
 export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
 export TEMPLATES_DIR="$CONFIGS_DIR/templates"
-export RUN_MODULES_DIR="$CONFIGS_DIR/scripts/run_modules"
+export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
+export GIT_REPOS_DIR="$DOCUMENTS_DIR/git_repos"
+export PROGRAMMING_DIR="$DOCUMENTS_DIR/programming"
 
 # Temporary paths
-export ASD_REPO_DIR="$DATA_DIR/Documents/agh/semestr_2/asd/asd_repo"
+export AGH_DIR="$DOCUMENTS_DIR/agh"
+export CURR_SEM_DIR="$AGH_DIR/semestr_2"
+export ASD_REPO_DIR="$CURR_SEM_DIR/asd/asd_repo"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"

@@ -26,3 +26,9 @@
         - { src: "/tmp/i3.conf", dest: "{{ ansible_env.HOME }}/.config/i3/config", become: "no" }
         - { src: "/tmp/i3status.conf", dest: "{{ ansible_env.HOME }}/.config/i3status/config", become: "no" }
         - { src: "/tmp/conky.conf", dest: "{{ ansible_env.HOME }}/.conkyrc", become: "no" }
+
+    - name: Correct the path to the background image of xfce4-terminal
+      replace:
+        path: "{{ ansible_env.HOME }}/.config/xfce4/terminal/terminalrc"
+        regexp: "^BackgroundImageFile=background image file changeit$"
+        replace: "BackgroundImageFile={{ ansible_env.HOME }}/.terminal_wallpaper"
