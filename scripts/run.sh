@@ -121,15 +121,17 @@ check_file_type() {
 }
 
 print_mode() {
+    printf "Using the "
     if [[ "$interactive" = true ]]; then
-        echo "Using interactive mode"
+        printf "interactive "
     elif [[ $to_less = true ]]; then
-        echo "Using less mode"
+        printf "less "
     elif [[ $quiet = true ]]; then
-        echo "Using quiet mode"
+        printf "quiet "
     else
-        echo "Using default mode"
-    fi    
+        printf "default "
+    fi
+    echo "mode"
 }
 
 read_flags "$@"

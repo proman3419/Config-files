@@ -11,3 +11,4 @@
 - [ ] Add Nixnote2 config to playbook
 - [ ] Add Rhythmbox config
 - [ ] Change image viewer
+- [ ] Set default applications
