@@ -7,15 +7,15 @@
   tasks:
     - name: Add apt repositories
       apt_repository:
-        repo: "{{ item.repo }}"
+        repo: "{{ item }}"
         state: present
       with_items:
-        - { repo: "deb http://deb.debian.org/debian/ testing main contrib non-free" }
-        - { repo: "deb-src http://deb.debian.org/debian/ testing main contrib non-free" }
-        - { repo: "deb http://deb.debian.org/debian/ testing-updates main contrib non-free" }
-        - { repo: "deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free" }
-        - { repo: "deb http://deb.debian.org/debian-security testing-security main" }
-        - { repo: "deb-src http://deb.debian.org/debian-security testing-security main" }
+        - "deb http://deb.debian.org/debian/ testing main contrib non-free"
+        - "deb-src http://deb.debian.org/debian/ testing main contrib non-free"
+        - "deb http://deb.debian.org/debian/ testing-updates main contrib non-free"
+        - "deb-src http://deb.debian.org/debian/ testing-updates main contrib non-free"
+        - "deb http://deb.debian.org/debian-security testing-security main"
+        - "deb-src http://deb.debian.org/debian-security testing-security main"
 
     - name: Update apt cache
       apt:
@@ -64,7 +64,7 @@
         - { url: "https://cdn.akamai.steamstatic.com/client/installer/steam.deb", path: "/tmp/steam_package.deb", name: "Steam" }
 
     - name: Install packages using dedicated scripts
-      shell: "{{ item.script_path }}"
+      shell: "{{ item }}"
       with_items:
-        - { script_path: "{{ scripts_dir }}/install_packages/sublime-text_install.sh" }
-        - { script_path: "{{ scripts_dir }}/install_packages/sublime-merge_install.sh" }
+        - "{{ scripts_dir }}/install_packages/sublime-text_install.sh"
+        - "{{ scripts_dir }}/install_packages/sublime-merge_install.sh"

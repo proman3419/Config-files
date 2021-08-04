@@ -3,7 +3,7 @@
 	"dark_theme": "Adaptive.sublime-theme",
 	"light_theme": "Adaptive.sublime-theme",
 	"theme": "Adaptive.sublime-theme",
-	"themed_title_bar": false,
+	"themed_title_bar": true,
 
 	"font_face": "Carlita",
 	"font_size": 16,

@@ -32,3 +32,14 @@
         path: "{{ ansible_env.HOME }}/.config/xfce4/terminal/terminalrc"
         regexp: "^BackgroundImageFile=background image file changeit$"
         replace: "BackgroundImageFile={{ ansible_env.HOME }}/.terminal_wallpaper"
+      become: no
+
+    - name: Copy build systems for Sublime Text
+      copy:
+        src: "../sublime_text/build_systems/{{ item }}.sublime-build"
+        dest: "{{ ansible_env.HOME }}/.config/sublime-text/Packages/User"
+        mode: 0644
+      become: no
+      with_items:
+        - "run py"
+

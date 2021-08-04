@@ -1,0 +1,53 @@
+{
+    "selector": "source.python",
+    "cmd": ["xfce4-terminal",
+            "-T", "Output - ${file_name}", 
+            "-e", "bash -c 'run.sh py ${file}; exec bash'"],
+
+    "variants": [
+        {
+            "name": "t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -t; exec bash'"],
+        },
+
+        {
+            "name": "i",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -i; exec bash'"],
+        },
+        {
+            "name": "l",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -l; exec bash'"],
+        },
+        {
+            "name": "q",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -q; exec bash'"],
+        },
+
+        {
+            "name": "it",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -i -t; exec bash'"],
+        },
+        {
+            "name": "lt",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -l -t; exec bash'"],
+        },
+        {
+            "name": "qt",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh py ${file} -q -t; exec bash'"],
+        },
+    ]
+}
