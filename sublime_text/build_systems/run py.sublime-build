@@ -32,19 +32,19 @@
         },
 
         {
-            "name": "it",
+            "name": "i t",
             "cmd": ["xfce4-terminal",
                     "-T", "Output - ${file_name}", 
                     "-e", "bash -c 'run.sh py ${file} -i -t; exec bash'"],
         },
         {
-            "name": "lt",
+            "name": "l t",
             "cmd": ["xfce4-terminal",
                     "-T", "Output - ${file_name}", 
                     "-e", "bash -c 'run.sh py ${file} -l -t; exec bash'"],
         },
         {
-            "name": "qt",
+            "name": "q t",
             "cmd": ["xfce4-terminal",
                     "-T", "Output - ${file_name}", 
                     "-e", "bash -c 'run.sh py ${file} -q -t; exec bash'"],
