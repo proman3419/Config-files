@@ -12,3 +12,4 @@
 - [ ] Add Rhythmbox config
 - [ ] Change image viewer
 - [ ] Set default applications
+- [ ] Change i3 colors
