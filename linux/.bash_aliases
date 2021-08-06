@@ -9,8 +9,8 @@ alias setclip='xclip -selection c'
 alias getclip='xclip -selection c -o'
 
 # Games
-alias soldat='/usr/share/playonlinux/playonlinux --run "Soldat" %F'
-alias soldatserver='~/Documents/soldat/local_server/soldatserver'
+#alias soldat='/usr/share/playonlinux/playonlinux --run "Soldat" %F'
+alias soldat='wine ~/.PlayOnLinux/wineprefix/Soldat/drive_c/Soldat/starter.exe'
 alias arsse='wine /opt/ARSSE/ARSSE.exe'
 
 # Programing
