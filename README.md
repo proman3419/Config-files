@@ -13,3 +13,5 @@
 - [ ] Change image viewer
 - [ ] Set default applications
 - [ ] Change i3 colors
+- [ ] Add i3 color schemes
+- [ ] Add mypaint config
