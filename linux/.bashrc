@@ -166,6 +166,9 @@ function CPS1() {
 
 # HOME paths
 export RUNTIME_FILES_DIR="$HOME/.runtime_files"
+export RUNTIME_INPUT_FILE="$RUNTIME_FILES_DIR/input"
+export RUNTIME_OUTPUT_FILE="$RUNTIME_FILES_DIR/output"
+export RUNTIME_COMPILED_FILE="$RUNTIME_FILES_DIR/compiled"
 
 # DATA_DIR paths
 export DATA_DIR="/media/shared" # where the partition with data is mounted
