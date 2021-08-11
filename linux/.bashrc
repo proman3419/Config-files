@@ -179,17 +179,20 @@ export OTHERS_DIR="$DATA_DIR/Others"
 export PICTURES_DIR="$DATA_DIR/Pictures"
 export VIDEOS_DIR="$DATA_DIR/Videos"
 
+export GIT_REPOS_DIR="$DOCUMENTS_DIR/git_repos"
+export PROGRAMMING_DIR="$DOCUMENTS_DIR/programming"
+
 export CONFIGS_DIR="$DOCUMENTS_DIR/configs"
 export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
 export TEMPLATES_DIR="$CONFIGS_DIR/templates"
 export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
-export GIT_REPOS_DIR="$DOCUMENTS_DIR/git_repos"
-export PROGRAMMING_DIR="$DOCUMENTS_DIR/programming"
+
+export AGH_DIR="$DOCUMENTS_DIR/agh"
 
 # Temporary paths
-export AGH_DIR="$DOCUMENTS_DIR/agh"
 export CURR_SEM_DIR="$AGH_DIR/semestr_2"
-export ASD_REPO_DIR="$CURR_SEM_DIR/asd/asd_repo"
+export ASD_REPO_DIR="$AGH_DIR/semestr_2/asd/asd_repo"
+export ANALIZA_2_DIR="$AGH_DIR/semestr_2/analiza_2"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"
