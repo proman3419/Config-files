@@ -1,5 +1,5 @@
 A File Icon
-Anaconda
+Jedi - Python autocompletion
 Dracula Color Scheme
 PackageDev
 SideBarEnhancements
