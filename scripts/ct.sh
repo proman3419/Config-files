@@ -22,12 +22,14 @@ name_to_relative_path["cpp"]="cpp.cpp"
 name_to_relative_path["cppcp"]="cp.cpp"
 name_to_relative_path["py"]="py.py"
 name_to_relative_path["sh"]="sh.sh"
+name_to_relative_path["hs"]="hs.hs"
 
 name_to_description["c"]="Standard C"
 name_to_description["cpp"]="Standard C++"
 name_to_description["cppcp"]="Competitive programming C++"
 name_to_description["py"]="Standard Python"
 name_to_description["sh"]="Standard Bash"
+name_to_description["hs"]="Standard Haskell"
 
 template_relative_path=${name_to_relative_path[$template_name]}
 

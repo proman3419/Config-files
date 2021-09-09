@@ -17,6 +17,7 @@ alias arsse='wine /opt/ARSSE/ARSSE.exe'
 alias idea='/opt/idea-IC-192.7142.36/bin/idea.sh'
 alias python3m='python3 -m cProfile'
 alias python='python3'
+alias haskell='ghc'
 
 # Hacking
 alias kali='virtualbox --fullscreen -startvm "Kali"'

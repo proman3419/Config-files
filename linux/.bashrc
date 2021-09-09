@@ -190,9 +190,7 @@ export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
 export AGH_DIR="$DOCUMENTS_DIR/agh"
 
 # Temporary paths
-export CURR_SEM_DIR="$AGH_DIR/semestr_2"
-export ASD_REPO_DIR="$AGH_DIR/semestr_2/asd/asd_repo"
-export ANALIZA_2_DIR="$AGH_DIR/semestr_2/analiza_2"
+export CURR_SEM_DIR="$AGH_DIR/semestr_3"
 
 # Other variables
 export JAVA_HOME="/usr/bin/java"

@@ -22,10 +22,12 @@ declare -A name_to_description
 name_to_relative_path["c"]="c.sh"
 name_to_relative_path["cpp"]="cpp.sh"
 name_to_relative_path["py"]="py.sh"
+name_to_relative_path["hs"]="hs.sh"
 
 name_to_description["c"]="Standard C"
 name_to_description["cpp"]="Standard C++"
 name_to_description["py"]="Standard Python"
+name_to_description["hs"]="Standard Haskell"
 
 record_time=false
 interactive=false

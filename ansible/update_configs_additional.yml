@@ -36,10 +36,7 @@
 
     - name: Copy build systems for Sublime Text
       copy:
-        src: "../sublime_text/build_systems/{{ item }}.sublime-build"
+        src: "../sublime_text/build_systems/"
         dest: "{{ ansible_env.HOME }}/.config/sublime-text/Packages/User"
         mode: 0644
       become: no
-      with_items:
-        - "run py"
-

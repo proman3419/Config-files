@@ -1,0 +1,53 @@
+{
+    "selector": "source.haskell",
+    "cmd": ["xfce4-terminal",
+            "-T", "Output - ${file_name}", 
+            "-e", "bash -c 'run.sh hs ${file}; exec bash'"],
+
+    "variants": [
+        {
+            "name": "t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -t; exec bash'"],
+        },
+
+        {
+            "name": "i",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -i; exec bash'"],
+        },
+        {
+            "name": "l",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -l; exec bash'"],
+        },
+        {
+            "name": "q",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -q; exec bash'"],
+        },
+
+        {
+            "name": "i t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -i -t; exec bash'"],
+        },
+        {
+            "name": "l t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -l -t; exec bash'"],
+        },
+        {
+            "name": "q t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh hs ${file} -q -t; exec bash'"],
+        },
+    ]
+}
