@@ -18,6 +18,7 @@ alias idea='/opt/idea-IC-192.7142.36/bin/idea.sh'
 alias python3m='python3 -m cProfile'
 alias python='python3'
 alias haskell='ghc'
+alias minizincide='/opt/MiniZincIDE-2.5.5-bundle-linux-x86_64/MiniZincIDE.sh'
 
 # Hacking
 alias kali='virtualbox --fullscreen -startvm "Kali"'
