@@ -16,3 +16,5 @@ Environment variables for specific users should be located in their .bashrcs.
 Git keeps track of only executable permissions.
 
 'source script_path' allows the script_path to access variables from the calling script.
+
+Add launcher scripts to ~/.local/bin to make them visible for dmenu (/bin is an alternative)

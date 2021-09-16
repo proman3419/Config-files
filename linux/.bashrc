@@ -180,16 +180,15 @@ export PICTURES_DIR="$DATA_DIR/Pictures"
 export VIDEOS_DIR="$DATA_DIR/Videos"
 
 export GIT_REPOS_DIR="$DOCUMENTS_DIR/git_repos"
-export PROGRAMMING_DIR="$DOCUMENTS_DIR/programming"
+export PROGRAMING_DIR="$DOCUMENTS_DIR/programing"
 
 export CONFIGS_DIR="$DOCUMENTS_DIR/configs"
 export SCRIPTS_DIR="$CONFIGS_DIR/scripts"
 export TEMPLATES_DIR="$CONFIGS_DIR/templates"
 export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
 
-export AGH_DIR="$DOCUMENTS_DIR/agh"
-
 # Temporary paths
+export AGH_DIR="$DOCUMENTS_DIR/agh"
 export CURR_SEM_DIR="$AGH_DIR/semestr_3"
 
 # Other variables
@@ -200,7 +199,6 @@ export TERMINAL="xfce4-terminal"
 PATH="$PATH:/opt"
 PATH="$PATH:/usr/bin/js"
 PATH="$PATH:/usr/share/playonlinux/playonlinux"
-PATH="$PATH:$DATA_DIR/Documents/soldat/local_server"
 PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 

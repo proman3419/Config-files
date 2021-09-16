@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#"/usr/share/playonlinux/playonlinux --run 'Soldat' %F"
+wine "$HOME/.PlayOnLinux/wineprefix/Soldat/drive_c/Soldat/starter.exe"

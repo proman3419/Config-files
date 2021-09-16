@@ -40,3 +40,10 @@
         dest: "{{ ansible_env.HOME }}/.config/sublime-text/Packages/User"
         mode: 0644
       become: no
+
+    - name: Copy launcher scripts
+      copy:
+        src: "../scripts/launchers/"
+        dest: "{{ ansible_env.HOME }}/.local/bin"
+        mode: 0755
+      become: no

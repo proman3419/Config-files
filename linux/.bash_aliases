@@ -7,22 +7,10 @@ alias reboot='systemctl reboot'
 alias gput='nvidia-smi -q -d temperature'
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection c -o'
-
-# Games
-#alias soldat='/usr/share/playonlinux/playonlinux --run "Soldat" %F'
-alias soldat='wine ~/.PlayOnLinux/wineprefix/Soldat/drive_c/Soldat/starter.exe'
-alias arsse='wine /opt/ARSSE/ARSSE.exe'
+alias update-configs='ansible-playbook "$CONFIGS_DIR/ansible/update_configs.yml" -K'
+alias install-packages='ansible-playbook "$CONFIGS_DIR/ansible/install_packages.yml" -K'
 
 # Programing
-alias idea='/opt/idea-IC-192.7142.36/bin/idea.sh'
 alias python3m='python3 -m cProfile'
 alias python='python3'
 alias haskell='ghc'
-alias minizincide='/opt/MiniZincIDE-2.5.5-bundle-linux-x86_64/MiniZincIDE.sh'
-
-# Hacking
-alias kali='virtualbox --fullscreen -startvm "Kali"'
-alias stegsolve='/opt/stegsolve/Stegsolve.jar'
-
-# Others
-alias winbox='wine /opt/winbox/winbox64.exe'

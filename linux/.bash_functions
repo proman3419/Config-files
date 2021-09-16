@@ -12,6 +12,12 @@ wifi_connect() {
     nmcli dev wifi connect $network_name password $password
 }
 
+wifi_connect_nopasswd() {
+    read -p "network name: " network_name
+    echo 
+    nmcli dev wifi connect $network_name
+}
+
 wifi_show() {
     nmcli dev wifi
 }
