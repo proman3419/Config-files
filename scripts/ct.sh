@@ -54,9 +54,20 @@ print_help() {
     done
 }
 
+copy_all_templates() {
+    cp -R "$TEMPLATES_DIR/." "$target_path"
+
+    if [[ $? == 0 ]]; then
+        echo "Created copies of all templates in '${target_path}'"
+    fi
+}
+
 read_flags() {
     if [[ $1 == "--help" ]]; then
         print_help
+        exit 0
+    elif [[ $1 == "-A" ]]; then
+        copy_all_templates
         exit 0
     fi
 
@@ -82,7 +93,7 @@ else
 
     cp -r "$template_full_path" "$target_path"
 
-    if [[ -e $target_path ]]; then
+    if [[ $? == 0 ]]; then
         echo "Created a copy of '${template_name}' in '${target_path}'"
     fi
 fi

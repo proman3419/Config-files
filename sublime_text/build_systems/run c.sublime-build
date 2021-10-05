@@ -1,0 +1,53 @@
+{
+    "selector": "source.c",
+    "cmd": ["xfce4-terminal",
+            "-T", "Output - ${file_name}", 
+            "-e", "bash -c 'run.sh c ${file}; exec bash'"],
+
+    "variants": [
+        {
+            "name": "t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -t; exec bash'"],
+        },
+
+        {
+            "name": "i",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -i; exec bash'"],
+        },
+        {
+            "name": "l",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -l; exec bash'"],
+        },
+        {
+            "name": "q",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -q; exec bash'"],
+        },
+
+        {
+            "name": "i t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -i -t; exec bash'"],
+        },
+        {
+            "name": "l t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -l -t; exec bash'"],
+        },
+        {
+            "name": "q t",
+            "cmd": ["xfce4-terminal",
+                    "-T", "Output - ${file_name}", 
+                    "-e", "bash -c 'run.sh c ${file} -q -t; exec bash'"],
+        },
+    ]
+}
