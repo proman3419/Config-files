@@ -192,7 +192,7 @@ export AGH_DIR="$DOCUMENTS_DIR/agh"
 export CURR_SEM_DIR="$AGH_DIR/semestr_3"
 
 # Other variables
-export JAVA_HOME="/usr/bin/java"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export TERMINAL="xfce4-terminal"
 
 # Modify PATH
