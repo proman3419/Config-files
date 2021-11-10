@@ -172,6 +172,7 @@ export RUNTIME_COMPILED_FILE="$RUNTIME_FILES_DIR/compiled"
 
 # DATA_DIR paths
 export DATA_DIR="/media/shared" # where the partition with data is mounted
+export DOWNLOADS_DIR="$DATA_DIR/Downloads"
 export DOCUMENTS_DIR="$DATA_DIR/Documents"
 export IMPORTANT_DIR="$DATA_DIR/Important"
 export MUSIC_DIR="$DATA_DIR/Music"
@@ -192,8 +193,10 @@ export AGH_DIR="$DOCUMENTS_DIR/agh"
 export CURR_SEM_DIR="$AGH_DIR/semestr_3"
 
 # Other variables
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export JAVA_HOME="$HOME/.jdks/corretto-16.0.2/"
 export TERMINAL="xfce4-terminal"
+# For non-Fedora environments be sure the PROMPT_COMMAND sets the title bar.                                          
+export PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
 
 # Modify PATH
 PATH="$PATH:/opt"
@@ -233,3 +236,18 @@ PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
 # history size to 1000 lines
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/przemek/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/przemek/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/przemek/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/przemek/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

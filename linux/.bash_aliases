@@ -9,6 +9,7 @@ alias setclip='xclip -selection c'
 alias getclip='xclip -selection c -o'
 alias update-configs='ansible-playbook "$CONFIGS_DIR/ansible/update_configs.yml" -K'
 alias install-packages='ansible-playbook "$CONFIGS_DIR/ansible/install_packages.yml" -K'
+alias wifi-manager='nm-connection-editor'
 
 # Programing
 alias python3m='python3 -m cProfile'
