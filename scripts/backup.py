@@ -43,7 +43,7 @@ def create_dir_if_missing(path):
             print(status_str)
         except:
             print(fail_str(status_str))
-            exit(-1)
+            exit(1)
 
 
 def copy_file_if_missing(args, f_src_path, f_dest_path):
@@ -55,7 +55,7 @@ def copy_file_if_missing(args, f_src_path, f_dest_path):
             sleep(args.copy_sleep)
         except:
             print(fail_str(status_str))
-            exit(-1)
+            exit(1)
     else:
         print("OMIT FILE | FOUND " + f_src_path + "\t AS \t" + f_dest_path)
 
