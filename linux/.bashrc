@@ -190,7 +190,7 @@ export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
 
 # Temporary paths
 export AGH_DIR="$DOCUMENTS_DIR/agh"
-export CURR_SEM_DIR="$AGH_DIR/semestr_3"
+export CURR_SEM_DIR="$AGH_DIR/semestr_5"
 
 # Other variables
 export JAVA_HOME="$HOME/.jdks/corretto-16.0.2/"
@@ -203,6 +203,7 @@ PATH="$PATH:/opt"
 PATH="$PATH:/usr/bin/js"
 PATH="$PATH:/usr/share/playonlinux/playonlinux"
 PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
+PATH="${PATH}:/opt/MiniZincIDE-2.5.5-bundle-linux-x86_64/bin" # MiniZinc solvers
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
 
@@ -226,9 +227,10 @@ fi
 #-------------------------------------------------------------------------------
 
 # Custom PS1
-PS1="$(CPS1 ${BYellow})(\t)$(CPS1 ${NC}) " # time
-PS1=${PS1}"$(CPS1 ${BGreen})\u@\h$(CPS1 ${NC})" # username@hostname
-PS1=${PS1}"$(CPS1 ${NC}):$(CPS1 ${NC})" # separator
+PS1="$(CPS1 ${BRed})(\t)$(CPS1 ${NC})" # time
+PS1=${PS1}"$(CPS1 ${BYellow}) ~ $(CPS1 ${NC})" # separator
+PS1=${PS1}"$(CPS1 ${Purple})\u@\h$(CPS1 ${NC})" # username@hostname
+PS1=${PS1}"$(CPS1 ${BYellow}) -> $(CPS1 ${NC})" # separator
 PS1=${PS1}"$(CPS1 ${BBlue})\w$(CPS1 ${NC})" # current working directory
 PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
 

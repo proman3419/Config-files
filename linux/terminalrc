@@ -1,5 +1,5 @@
 [Configuration]
-FontName=Monospace 18
+FontName=Monospace 16
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
@@ -29,5 +29,5 @@ MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 BackgroundImageFile=background image file changeit
 BackgroundMode=TERMINAL_BACKGROUND_IMAGE
-BackgroundImageShading=0.600000
-
+BackgroundImageShading=0.300000
+BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_STRETCHED

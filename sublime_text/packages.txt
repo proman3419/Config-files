@@ -3,3 +3,4 @@ Jedi - Python autocompletion
 Dracula Color Scheme
 PackageDev
 SideBarEnhancements
+Terminus - https://www.geeksforgeeks.org/how-to-use-terminal-in-sublime-text-editor/
