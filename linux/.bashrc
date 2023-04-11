@@ -190,7 +190,7 @@ export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
 
 # Temporary paths
 export AGH_DIR="$DOCUMENTS_DIR/agh"
-export CURR_SEM_DIR="$AGH_DIR/semestr_5"
+export CURR_SEM_DIR="$AGH_DIR/semestr_6"
 
 # Other variables
 export JAVA_HOME="$HOME/.jdks/corretto-16.0.2/"
@@ -206,6 +206,8 @@ PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
 PATH="${PATH}:/opt/MiniZincIDE-2.5.5-bundle-linux-x86_64/bin" # MiniZinc solvers
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
+# Modify CLASSPATH
+export CLASSPATH=".:/usr/local/lib/antlr-4.11.1-complete.jar:$CLASSPATH"
 
 #-------------------------------------------------------------------------------
 # Aliases and functions
