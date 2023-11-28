@@ -10,6 +10,10 @@ alias getclip='xclip -selection c -o'
 alias update-configs='ansible-playbook "$CONFIGS_DIR/ansible/update_configs.yml" -K'
 alias install-packages='ansible-playbook "$CONFIGS_DIR/ansible/install_packages.yml" -K'
 alias wifi-manager='nm-connection-editor'
+alias agh-vpn='sudo openvpn /media/shared/Documents/agh/vpn/VPN-AGH.2023.ovpn'
+alias kubectl='/opt/kubectl'
+alias youtube-dl='python -m youtube_dl'
+alias download-music='cd $MUSIC_DIR/new_music && youtube-dl -f 251'
 
 # Programming
 alias python3m='python3 -m cProfile'

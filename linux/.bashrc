@@ -190,10 +190,11 @@ export RUN_MODULES_DIR="$SCRIPTS_DIR/run_modules"
 
 # Temporary paths
 export AGH_DIR="$DOCUMENTS_DIR/agh"
-export CURR_SEM_DIR="$AGH_DIR/semestr_6"
+export CURR_SEM_DIR="$AGH_DIR/semestr_7"
+export INZ_DIR="$AGH_DIR/inzynierka"
 
 # Other variables
-export JAVA_HOME="$HOME/.jdks/corretto-16.0.2/"
+export JAVA_HOME="$HOME/.jdks/openjdk-17/"
 export TERMINAL="xfce4-terminal"
 # For non-Fedora environments be sure the PROMPT_COMMAND sets the title bar.                                          
 export PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
@@ -204,10 +205,15 @@ PATH="$PATH:/usr/bin/js"
 PATH="$PATH:/usr/share/playonlinux/playonlinux"
 PATH="${PATH}:${SCRIPTS_DIR}" # Add scripts directory to PATH
 PATH="${PATH}:/opt/MiniZincIDE-2.5.5-bundle-linux-x86_64/bin" # MiniZinc solvers
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
 PATH="$PATH:$HOME/.rvm/bin" # Make sure this is the last PATH variable
 
 # Modify CLASSPATH
 export CLASSPATH=".:/usr/local/lib/antlr-4.11.1-complete.jar:$CLASSPATH"
+
+# Modif PYTHONPATH
+export PYTHONPATH=${PYTHONPATH}:$GIT_REPOS_DIR/youtube-dl
 
 #-------------------------------------------------------------------------------
 # Aliases and functions
@@ -240,6 +246,9 @@ PS1=${PS1}"$(CPS1 ${NC})\$$(CPS1 ${NC}) " # separator
 # history size to 1000 lines
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
+
+# Source thesis files
+source "$INZ_DIR/local/env.sh"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
