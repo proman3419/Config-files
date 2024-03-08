@@ -1,7 +1,7 @@
 # Config-files
 
 ## Build
-- [Linux](https://github.com/proman3419/Config-files/blob/master/setup/linux_setup.sh)
+- [Linux](setup/linux_setup.sh)
 - Windows
 
 ## TODO
